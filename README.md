@@ -1,19 +1,21 @@
 # MedProbCLIP: Probabilistic Adaptation of Vision–Language Foundation Model for Reliable Radiograph–Report Retrieval
 <div align="center">
 
-  [![AAAI Paper](https://img.shields.io/badge/AAAI'26-xxxx-blue)](https://aaai.org/conference/aaai/aaai-26)&nbsp;&nbsp;
+  [![WACV Workshop Paper](https://img.shields.io/badge/WACV'26-Workshop-blue)](https://aaai.org/conference/aaai/aaai-26)&nbsp;&nbsp;
   [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://www.gb-liang.com/projects/betarisk)&nbsp;&nbsp;
-  [![arXiv](https://img.shields.io/badge/arXiv-2511.04886-red?style=flat&label=arXiv)](https://arxiv.org/abs/2511.04886)&nbsp;&nbsp;
+  [![arXiv](https://img.shields.io/badge/arXiv-26xx.xxxx-red?style=flat&label=arXiv)](https://arxiv.org/abs/26xx.xxxx)&nbsp;&nbsp;
 
   [Ahmad Elallaf](https://www.linkedin.com/in/ahmadhamdy60344b234/),&nbsp;&nbsp;
-  [Nathan Jacobs](https://jacobsn.github.io),&nbsp;&nbsp;
-  [Xinyue Ye](https://geography.ua.edu/people/xinyue-ye),&nbsp;&nbsp;
-  [Mei Chen](https://engr.uky.edu/people/mei-chen),&nbsp;&nbsp;
+  [Yu Zhang](https://yuzhang03.github.io),&nbsp;&nbsp;
+  [Yuktha Priya Masupalli](https://www.linkedin.com/in/yukthapriya/),&nbsp;&nbsp;
+  [Jeong Yang](https://scholar.google.com/citations?user=W5ssJOYAAAAJ&hl=en),&nbsp;&nbsp;  
+  [Young Lee](https://scholar.google.com/citations?user=0l7CEwYAAAAJ&hl=en),&nbsp;&nbsp;
+  [Zechun Cao](https://zechuncao.com),&nbsp;&nbsp;
   [Gongbo Liang](https://www.gb-liang.com)
 
 </div>
 
-<!--Official implementation of ```BetaRisk```, a model that predicts uncertainty-aware roadway crash risk from satellite imagery by estimating a full Beta probability distribution.-->
+<!--Official implementation of ```MedProbCLIP```, a probabilistic vision–language learning framework for chest X-ray and radiology report representation learning and bidirectional retrieval.-->
 
 ### 📖 About The Project
 Roadway safety models often produce a single, deterministic risk score, which fails to capture the model's own uncertainty--a critical flaw in safety--critical applications. ```BetaRisk``` addresses this by reframing risk assessment as a probabilistic learning problem. Instead of a single number, our model uses deep learning to analyze satellite imagery and predict a full **Beta probability distribution** of crash risk. This provides a richer, more trustworthy assessment by quantifying both the most likely risk and the model's confidence in that prediction.
