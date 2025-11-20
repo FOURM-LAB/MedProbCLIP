@@ -24,24 +24,25 @@ Vision–language foundation models have emerged as powerful general-purpose rep
 Although datasets typically assign one caption to one image, real image–text relationships are rarely one-to-one. As shown in **Figure 1**, human raters often identify a single caption may accurately describe many visually similar images (or vice versa). These *unannotated positives* become **false negatives**, misleading standard contrastive learning models that assume a strict one-to-one alignment.
 
 <div align="center">
-  <img src="imgs/coco_false-negative-match.png" width="768">
+  <img src="imgs/coco_false-negative-match.png" width="600">
 </div>
 
-<div align="left">
+<div align="left">  
   
 **Figure 1.** Illustration of inherent many-to-many relationships in cross-modal datasets. Although MS-COCO annotates only a single caption as the positive match to one image (blue arrows), human raters often identify multiple additional plausible matches (pink dashed arrows). Such unannotated positives create false negatives that violate the one-to-one assumption commonly enforced in contrastive learning, motivating models capable of handling ambiguity and uncertainty in image–text alignment.
 </div>
 
-This structural ambiguity exists even more strongly in medical imaging—reports summarize multiple views, findings overlap across studies, and similar pathologies appear in many radiographs.
 
-The result is a fundamental mismatch:
+**This structural ambiguity exists even more strongly in medical imaging—reports summarize multiple views, findings overlap across studies, and similar pathologies appear in many radiographs, resulting a fundamental mismatch:**
+<div align="center">
+  
 |Reality|Standard Contrastive Learning|
 |:--:|:--:|
 |Many-to-many relationships|Forced one-to-one alignment|
 |Natural ambiguity|Overconfident similarity scores|
 |Multiple plausible matches|Punished as negatives|
 |Heterogeneous clinical evidence|Single deterministic embedding|
-
+<div align="left">  
 
 **```MedProbCLIP```** is motivated by addressing this mismatch requires models that can **represent uncertainty**, **model multiple plausible matches**, and avoid **overconfident errors**. 
 
