@@ -17,71 +17,44 @@
 
 <!--Official implementation of ```MedProbCLIP```, a probabilistic vision–language learning framework for chest X-ray and radiology report representation learning and bidirectional retrieval.-->
 
-### 📖 About The Project
-Roadway safety models often produce a single, deterministic risk score, which fails to capture the model's own uncertainty--a critical flaw in safety--critical applications. ```BetaRisk``` addresses this by reframing risk assessment as a probabilistic learning problem. Instead of a single number, our model uses deep learning to analyze satellite imagery and predict a full **Beta probability distribution** of crash risk. This provides a richer, more trustworthy assessment by quantifying both the most likely risk and the model's confidence in that prediction.
+### 📖 About This Project
+Vision–language foundation models have emerged as powerful general-purpose representation learners with strong potentials for multimodal understanding, but their deterministic embeddings often fail to provide the reliability required for high-stakes biomedical applications. This work introduces ```MedProbCLIP```, a probabilistic vision–language learning framework for chest X-ray and radiology report representation learning and bidirectional retrieval. The proposed method models image and text representations as **Gaussian embeddings** through a **probabilistic contrastive objective** that explicitly captures **uncertainty and many-to-many correspondences** between radiographs and clinical narratives. A variational information bottleneck mitigates overconfident predictions, while MedProbCLIP employs multi-view radiograph encoding and multi-section report encoding during training to provide fine-grained supervision for clinically aligned correspondence, yet requires only a single radiograph and a single report at inference. 
+
+### 💡 Why Probabilistic Contrastive Learning: The Hidden Many-to-Many Problem
+Although datasets typically assign one caption to one image, real image–text relationships are rarely one-to-one. As shown in **Figure 1**, human raters often identify a single caption may accurately describe many visually similar images (or vice versa). These *unannotated positives* become **false negatives**, misleading standard contrastive learning models that assume a strict one-to-one alignment.
 
 <div align="center">
-  <img src="imgs/case_study.png" width="768">
+  <img src="imgs/coco_false-negative-match.png" width="768">
 </div>
 
 <div align="left">
   
-**Figure 1.** A case study comparison for the San Antonio River Walk area. In the middle and right panels, each colored dot represents a sampled location where a risk score was predicted. **(Left) Ground Truth:** The locations of previous fatal crashes are shown as red diamonds. **(Middle) Baseline Model:** The baseline exhibits low recall, incorrectly assigning low-risk scores (blue) to many known crash sites at the sampled locations. **(Right) Our Model:** Our model demonstrates superior recall by correctly identifying more hazardous locations with elevated risk scores (yellow and orange), generating a more realistic and spatially coherent risk map.
+**Figure 1.** Illustration of inherent many-to-many relationships in cross-modal datasets. Although MS-COCO annotates only a single caption as the positive match to one image (blue arrows), human raters often identify multiple additional plausible matches (pink dashed arrows). Such unannotated positives create false negatives that violate the one-to-one assumption commonly enforced in contrastive learning, motivating models capable of handling ambiguity and uncertainty in image–text alignment.
 </div>
 
-### ✨ Key Features
-- **Probabilistic Formulation:** Outputs the ```α``` and ```β``` parameters of a Beta distribution to capture both risk and uncertainty for every prediction.
-- **Vision-Based:** Uses multi-scale satellite imagery as the sole input to learn the complex interplay of environmental risk factors.
-- **State-of-the-Art Performance:** Achieves a 17-23% relative improvement in recall and superior model calibration (ECE) compared to strong baselines.
+This structural ambiguity exists even more strongly in medical imaging—reports summarize multiple views, findings overlap across studies, and similar pathologies appear in many radiographs.
 
-### 💡 Prediction Interpretability
-A key advantage of ```BetaRisk``` is its ability to provide richer, more interpretable predictions than standard models. The table below demonstrates how a single, ambiguous score from a baseline model can correspond to **multiple, distinct scenarios** in ```BetaRisk```. For any given risk score, whether high (```0.85```), low (```0.15```), or medium (```0.50```), our model reveals the underlying confidence level, providing crucial context for decision-making that is unavailable in standard deterministic models.
+The result is a fundamental mismatch:
+|Reality|Standard Contrastive Learning|
+|:--:|:--:|
+|Many-to-many relationships|Forced one-to-one alignment|
+|Natural ambiguity|Overconfident similarity scores|
+|Multiple plausible matches|Punished as negatives|
+|Heterogeneous clinical evidence|Single deterministic embedding|
 
-<table align="center">
-    <thead>
-        <tr>
-            <th>Risk Score</th>
-            <th>Baseline Scenario</th>
-            <th><code>BetaRisk</code> Scenarios (Ours)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan="2" align="center"><code>0.85</code></td>
-            <td rowspan="2">High Risk</td>
-            <td><b>High confidence, high risk</b> (Risk: 0.85 ± 0.05 (α=30, β=5))</td>
-        </tr>
-        <tr>
-            <td><b>Low confidence, high risk</b> (Risk: 0.85 ± 0.14 (α=5.1, β=0.9))</td>
-        </tr>
-        <tr>
-            <td rowspan="2" align="center"><code>0.15</code></td>
-            <td rowspan="2">Low Risk</td>
-            <td><b>High confidence, low risk</b> (Risk: 0.15 ± 0.04 (α=5, β=30))</td>
-        </tr>
-        <tr>
-            <td><b>Low confidence, low risk</b> (Risk: 0.15 ± 0.14 (α=0.9, β=5.1))</td>
-        </tr>
-        <tr>
-            <td rowspan="3" align="center"><code>0.50</code></td>
-            <td rowspan="3">Medium Risk or Very Uncertain Prediction</td>
-            <td><b>High confidence, medium risk</b> (Risk: 0.50 ± 0.08 (α=20, β=20))</td>
-        </tr>
-        <tr>
-            <td><b>Low confidence, medium risk</b> (Risk: 0.50 ± 0.15 (α=10, β=10))</td>
-        </tr>
-        <tr>
-            <td><b>Very uncertain prediction</b> (Risk: 0.50 ± 0.25 (α=2, β=2))</td>
-        </tr>
-    </tbody>
-</table>
+
+**```MedProbCLIP```** is motivated by addressing this mismatch requires models that can **represent uncertainty**, **model multiple plausible matches**, and avoid **overconfident errors**. 
+
+
+### ✨ Evaluation Results
+Todo...
 
 ### 🚀 Getting Started
 To set up the project and run the training code, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/FOURM-LAB/BetaRisk.git
+    git clone https://github.com/FOURM-LAB/MedProbCLIP.git
     cd BetaRisk
     ```
 
@@ -94,29 +67,20 @@ To set up the project and run the training code, follow these steps:
     ```
 
 3.  **Download Pre-trained Weights:**
-    Download the pre-trained weights from [Google Drive](https://drive.google.com/file/d/1fueEPJ-fJeEf3fSQ8kpVK1GCF--x8BqJ/view?usp=sharing).
-    Save the downloaded file as `pre-trained_weights_mscm.pth` inside the `./ckpts/pre-trained_weights/` directory.
-    You might need to create these directories if they don't exist:
-    ```bash
-    mkdir -p ckpts/pre-trained_weights/
-    mv /path/to/downloaded_file.pth ckpts/pre-trained_weights/pre-trained_weights_mscm.pth
-    ```
+    todo...
 
 4.  **Prepare Data Files:**
-    The dataset used in this project can be found from [MTSL-RoadRisk](https://www.gb-liang.com/projects/mtsl-roadrisk). 
+    todo...
 
 5.  **Run the Training Script:**
-    Once the dependencies are installed and pre-trained weights are in place, you can start the training process by running:
-    ```bash
-    python betarisk_train.py
-    ```
+    todo
 
 ### 📜 Citation
 ```
 @inproceedings{elallaf2026betarisk,
-  title={Beta Distribution Learning for Reliable Roadway Crash Risk Assessment},
-  author={Elallaf, Ahmad and Jacobs, Nathan and Ye, Xinyue and Chen, Mei and Liang, Gongbo},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  title={MedProbCLIP: Probabilistic Adaptation of Vision–Language Foundation Model for Reliable Radiograph–Report Retrieval},
+  author={Elallaf, Ahmad and Zhang, Yu and Yang, Joeng and Lee, Young and Cao, Zechun and Liang, Gongbo},
+  booktitle={WACV Workshop},
   year={2026}
 }
 ```
