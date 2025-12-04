@@ -1,7 +1,7 @@
 # MedProbCLIP: Probabilistic Adaptation of Vision–Language Foundation Model for Reliable Radiograph–Report Retrieval
 <div align="center">
 
-  [![WACV Workshop Paper](https://img.shields.io/badge/WACV'26-Workshop-blue)](https://aaai.org/conference/aaai/aaai-26)&nbsp;&nbsp;
+  [![WACV Workshop Paper](https://img.shields.io/badge/WACV'26-Workshop(UnderReview)-blue)](https://wacv.thecvf.com)&nbsp;&nbsp;
   [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://www.gb-liang.com/projects/betarisk)&nbsp;&nbsp;
   [![arXiv](https://img.shields.io/badge/arXiv-26xx.xxxx-red?style=flat&label=arXiv)](https://arxiv.org/abs/26xx.xxxx)&nbsp;&nbsp;
 
@@ -81,7 +81,7 @@ To set up the project and run the training code, follow these steps:
 @inproceedings{elallaf2026betarisk,
   title={MedProbCLIP: Probabilistic Adaptation of Vision–Language Foundation Model for Reliable Radiograph–Report Retrieval},
   author={Elallaf, Ahmad and Zhang, Yu and Yang, Joeng and Lee, Young and Cao, Zechun and Liang, Gongbo},
-  booktitle={WACV Workshop},
+  booktitle={WACV Workshop (Under Review)},
   year={2026}
 }
 ```
