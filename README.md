@@ -79,9 +79,10 @@ To set up the project and run the training code, follow these steps:
 ### 📜 Citation
 ```
 @inproceedings{elallaf2026medprobclip,
-  title={MedProbCLIP: Probabilistic Adaptation of Vision–Language Foundation Model for Reliable Radiograph–Report Retrieval},
+  title={MedProbCLIP: Probabilistic Adaptation of Vision–Language Foundation Model for Reliable Radiograph-Report Retrieval},
   author={Elallaf, Ahmad and Zhang, Yu and Yang, Joeng and Lee, Young and Cao, Zechun and Liang, Gongbo},
-  booktitle={WACV Workshop on Large Foundation Models in Biology and Biomedicine},
+  booktitle={Proceedings of the Winter Conference on Applications of Computer Vision (WACV) Workshops},
+  month={March},
   year={2026}
 }
 ```
