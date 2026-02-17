@@ -71,10 +71,40 @@ To set up the project and run the training code, follow these steps:
     todo...
 
 4.  **Prepare Data Files:**
-    todo...
+    This project requires CSV files to define dataset splits (e.g., `train.csv`, `val.csv`, `test.csv`).
+
+    *   **Expected CSV Structure:** Each row in the CSV files should correspond to a study and typically include (but is not limited to) the following columns:
+        *   `study_id`: Unique identifier for the study.
+        *   `image_paths`: A path or list of paths to the image files associated with the study. If multiple images, they should be separated by a delimiter (e.g., `;`).
+        *   `view_names`: Corresponding view names for each image (e.g., `PA`, `LATERAL`).
+        *   `findings`: The 'Findings' section of the radiology report.
+        *   `impression`: The 'Impression' section of the radiology report.
+        *   **Example Row (Illustrative):**
+            ```csv
+            study_id,image_paths,view_names,findings,impression
+            s12345,/path/to/image1.jpg;/path/to/image2.jpg,PA;LATERAL,Lungs are clear. No acute cardiopulmonary abnormality.,Normal chest x-ray.
+            ```
+
+    *   **For MIMIC-CXR Dataset:**
+        The **MIMIC-CXR dataset** is a restricted-access dataset. Please refer to the official PhysioNet website for detailed instructions on how to obtain access, download the data (specifically the MIMIC-CXR-JPG version).
+        *   *Note: Scripts for generating these exact CSVs from the raw MIMIC-CXR metadata are not provided in this repository, as specific preprocessing might vary. Users are expected to generate these based on their downloaded MIMIC-CXR data, ensuring the columns match the `CXRStudyDataset` expectations.*
 
 5.  **Run the Training Script:**
-    todo
+    To train the MedProbCLIP model, use the `medprobclip/medprobclip_train.py` script. The script supports various hyperparameters for customization.
+
+    **Basic Usage:**
+    Ensure data CSVs (e.g., `train.csv`, `val.csv`, `test.csv`) are prepared as described in the previous section.
+
+    ```bash
+    python medprobclip/medprobclip_train.py \
+      --train_csv /path/to/mimic_train.csv \
+      --val_csv /path/to/mimic_val.csv \
+      --test_csv /path/to/mimic_test.csv \
+      --out ./checkpoints_medprobclip
+    ```
+    *   **Data Paths:** Replace `/path/to/mimic_train.csv`, `/path/to/mimic_val.csv`, and `/path/to/mimic_test.csv` with the actual paths to the prepared CSV files.
+    *   **Output Directory:** The `--out` argument specifies where model checkpoints and TensorBoard logs will be saved.
+    *   **GPU Usage:** The script automatically utilizes available GPUs. For multi-GPU training, it defaults to `nn.DataParallel`.
 
 ### 📜 Citation
 ```
