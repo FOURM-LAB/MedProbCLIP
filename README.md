@@ -68,7 +68,8 @@ To set up the project and run the training code, follow these steps:
     ```
 
 3.  **Download Pre-trained Weights:**
-    todo...
+    Download the pre-trained MedProbCLIP model weights, trained on the MIMIC-CXR dataset, from [Google Drive](https://drive.google.com/file/d/1EFif8_ABFcvzB8fZh55OCETCJl-8ZFRN/view?usp=sharing)
+    Place the `pre-trained_weights.pt` file in the root of the cloned repository, or update the path when using it for inference/evaluation.
 
 4.  **Prepare Data Files:**
     This project requires CSV files to define dataset splits (e.g., `train.csv`, `val.csv`, `test.csv`).
