@@ -48,7 +48,17 @@ Although datasets typically assign one caption to one image, real image–text r
 
 
 ### ✨ Evaluation Results
-Todo...
+<div align="center">
+  <img src="imgs/result.png" width="960">
+</div>
+<br>
+
+<div align="center">
+  <img src="imgs/selective_retrieval.png" width="960">
+
+  **Figure 2.** Selective retrieval performance demonstrates ```MedProbCLIP```'s superior calibration and potential for safer clinical deployment.
+</div>
+
 
 ### 🚀 Getting Started
 To set up the project and run the training code, follow these steps:
