@@ -56,7 +56,7 @@ To set up the project and run the training code, follow these steps:
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/FOURM-LAB/MedProbCLIP.git
-    cd BetaRisk
+    cd MedProbCLIP
     ```
 
 2.  **Create a virtual environment and install dependencies:**
