@@ -108,12 +108,18 @@ To set up the project and run the training code, follow these steps:
     *   **GPU Usage:** The script automatically utilizes available GPUs. For multi-GPU training, it defaults to `nn.DataParallel`.
 
 ### 🙏 Acknowledgments
-<div style="display: flex; align-items: center;">
-  <img src="https://1000logos.net/wp-content/uploads/2025/01/NSF-Emblem.png" alt="NSF Logo" width="100" style="margin-right: 15px;"/>
-  <p style="margin-top: 0; margin-bottom: 0;">This material is based upon work supported by the National Science Foundation under Award No. 2334243. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
-</div>
+<table style="border: 1px solid white; border-collapse: collapse;">
+  <tr>
+    <td style="width: 400px; text-align: center; vertical-align: middle; border: 1px solid white;">
+      <img src="https://1000logos.net/wp-content/uploads/2025/01/NSF-Emblem.png" alt="NSF Logo" width="400"/>
+    </td>
+    <td style="vertical-align: middle; border: 1px solid white;">
+      This material is based upon work supported by the National Science Foundation under Award No. 2334243. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+    </td>
+  </tr>
+</table>
 
-The computational portion of this research utilized the GPU cluster provided by the [High Performance Computing Research Center](https://hprc.tamusa.edu) at Texas A&M University-San Antonio. We gratefully acknowledge the center's support in facilitating access to these resources.
+<!-- The computational portion of this research utilized the GPU cluster provided by the [High Performance Computing Research Center](https://hprc.tamusa.edu) at Texas A&M University-San Antonio. We gratefully acknowledge the center's support in facilitating access to these resources. -->
 
 ### 📜 Citation
 ```
