@@ -3,7 +3,7 @@
 
   [![WACV Workshop Paper](https://img.shields.io/badge/WACV'26-Workshop-blue)](https://sites.google.com/view/lfmbio)&nbsp;&nbsp;
   [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://www.gb-liang.com/projects/medprobclip)&nbsp;&nbsp;
-  [![arXiv](https://img.shields.io/badge/arXiv-26xx.xxxx-red?style=flat&label=arXiv)](https://arxiv.org/abs/26xx.xxxx)&nbsp;&nbsp;
+  [![arXiv](https://img.shields.io/badge/arXiv-2602.16019-red?style=flat&label=arXiv)](https://arxiv.org/abs/2602.16019)&nbsp;&nbsp;
 
   [Ahmad Elallaf](https://www.linkedin.com/in/ahmadhamdy60344b234/),&nbsp;&nbsp;
   [Yu Zhang](https://yuzhang03.github.io),&nbsp;&nbsp;
