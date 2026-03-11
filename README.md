@@ -1,7 +1,7 @@
 # MedProbCLIP: Probabilistic Adaptation of Vision–Language Foundation Model for Reliable Radiograph–Report Retrieval
 <div align="center">
 
-  [![WACV Workshop Paper](https://img.shields.io/badge/WACV'26-Workshop-blue)](https://sites.google.com/view/lfmbio)&nbsp;&nbsp;
+  [![WACV Workshop Paper](https://img.shields.io/badge/WACV'26-Workshop-blue)](https://openaccess.thecvf.com/content/WACV2026W/LFMBio/html/Elallaf_MedProbCLIP_Probabilistic_Adaptation_of_Vision-Language_Foundation_Model_for_Reliable_Radiograph-Report_WACVW_2026_paper.html)&nbsp;&nbsp;
   [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://www.gb-liang.com/projects/medprobclip)&nbsp;&nbsp;
   [![arXiv](https://img.shields.io/badge/arXiv-2602.16019-red?style=flat&label=arXiv)](https://arxiv.org/abs/2602.16019)&nbsp;&nbsp;
 
