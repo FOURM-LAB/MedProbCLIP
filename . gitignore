@@ -1,0 +1,27 @@
+# Ignore all hidden files
+.* 
+
+# macOS system files
+.DS_Store
+.localized
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Large files (e.g., model weights, data files, logs, tensorboard runs)
+*.pth
+*.pt
+*.safetensors
+*.onnx
+*.hdf5
+*.h5
+*.csv
+*.log
+runs/
+logs/
+ckpts/
+data/
+
+# Bash scripts
+*.sh
